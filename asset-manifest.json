@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/PledgeUp/static/css/main.8c9f2a34.css",
+    "main.js": "/PledgeUp/static/js/main.3e0b9946.js",
+    "static/media/homePage.jpg": "/PledgeUp/static/media/homePage.b59b193ff37a921847d7.jpg",
+    "index.html": "/PledgeUp/index.html",
+    "main.8c9f2a34.css.map": "/PledgeUp/static/css/main.8c9f2a34.css.map",
+    "main.3e0b9946.js.map": "/PledgeUp/static/js/main.3e0b9946.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c9f2a34.css",
+    "static/js/main.3e0b9946.js"
+  ]
+}
