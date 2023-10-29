@@ -24,7 +24,7 @@ const defaultProject = {
 };
 const projectHeader = {
   manager: "Address of Manager",
-  balance: "Balance",
+  balance: "Balance(in Wei)",
   category: "Category",
   targetAmount: "Target Amount(in Wei)",
   minimumContribution: "Minimum Contribution(in Wei)",
@@ -130,18 +130,18 @@ const ProjectScreen = () => {
 
       setCurrentProject({
         manager,
-        balance: balance + " Wei",
+        balance: fromBigIntToNumber(balance),
         title,
         description,
         category,
-        targetAmount,
-        minimumContribution,
-        backersCount,
+        targetAmount: fromBigIntToNumber(targetAmount),
+        minimumContribution: fromBigIntToNumber(minimumContribution),
+        backersCount: fromBigIntToNumber(backersCount),
         targetDate,
         imageLink,
-        fundingReceived,
-        pendingRequests,
-        totalRequests,
+        fundingReceived: fromBigIntToNumber(fundingReceived),
+        pendingRequests: fromBigIntToNumber(pendingRequests),
+        totalRequests: fromBigIntToNumber(totalRequests),
       });
 
       setIsLoading(0);

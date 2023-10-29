@@ -61,7 +61,7 @@ const RequestScreen = () => {
         newRequests.push({
           id: i + 1,
           description: currentRequest["description"],
-          amount: currentRequest["amount"],
+          amount: fromBigIntToNumber(currentRequest["amount"]),
           recipient: currentRequest["recipient"],
           approvalCount: currentRequest["approvalCount"],
           backersCount: backersCount,
