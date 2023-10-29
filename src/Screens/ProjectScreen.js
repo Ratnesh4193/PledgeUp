@@ -67,6 +67,7 @@ const ProjectScreen = () => {
     setError("");
     e.preventDefault();
     setIsContributeLoading(1);
+    console.log(currentProject);
     try {
       if (amount < currentProject["minimumContribution"]) {
         throw new Error(
