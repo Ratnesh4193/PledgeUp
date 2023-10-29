@@ -27,7 +27,16 @@ const HomeScreen = () => {
     };
     loadData();
   }, []);
-
+  const categories = [
+    "Arts",
+    "Comics & Illustration",
+    "Design & Tech",
+    "Film",
+    "Food & Craft",
+    "Games",
+    "Music",
+    "Publishing",
+  ];
   return (
     <>
       <Navbar expand="lg" collapseOnSelect>
