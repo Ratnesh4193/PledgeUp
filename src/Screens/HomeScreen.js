@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import Project from "../components/Project";
-import { FaPlus } from "react-icons/fa6";
 import Loader from "../components/Loader";
 import { LinkContainer } from "react-router-bootstrap";
-import web3 from "../ethereum/web3";
 const HomeScreen = () => {
   const [projectList, setProjectList] = useState([]);
   const [isLoading, setIsLoading] = useState(0);
@@ -18,7 +16,6 @@ const HomeScreen = () => {
         const newProjectList = await factory.methods
           .getDeployedProjects()
           .call();
-        console.log(newProjectList);
         setProjectList(newProjectList);
       } catch (err) {
         console.log(err.message);
@@ -39,22 +36,19 @@ const HomeScreen = () => {
   ];
   return (
     <>
-      <Navbar expand="lg" collapseOnSelect>
+      <Navbar expand="lg">
         <Container className="shadow-sm p-2 mb-2 bg-white rounded display-7 d-flex justify-content-center align-items-center">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            {categories.map((category) => {
-              return (
-                <Container>
-                  <Nav className="ml-auto justify-content-center on-hover">
-                    <LinkContainer to="/">
-                      <Nav.Link>{category}</Nav.Link>
-                    </LinkContainer>
-                  </Nav>
-                </Container>
-              );
-            })}
-          </Navbar.Collapse>
+          {categories.map((category, id) => {
+            return (
+              <Container key={id}>
+                <Nav className="ml-auto justify-content-center on-hover">
+                  <LinkContainer to="/">
+                    <Nav.Link>{category}</Nav.Link>
+                  </LinkContainer>
+                </Nav>
+              </Container>
+            );
+          })}
         </Container>
       </Navbar>
       <div>

@@ -9,31 +9,31 @@ const Project = ({ project }) => {
         <Card.Title as="h4">
           <strong className="text-capitalize">{project.title}</strong>
         </Card.Title>
-        <Card.Text as="h7">
+        <Card.Text as="h6">
           <div className="my-1">
             <strong className="h6">Category: </strong>
             {project.category}
           </div>
         </Card.Text>
-        <Card.Text as="h7">
+        <Card.Text as="h6">
           <div className="my-1">
             <strong className="h6">Min. Contribution: </strong>
             {project.minimumContribution} wei
           </div>
         </Card.Text>
-        <Card.Text as="h7">
+        <Card.Text as="h6">
           <div className="my-1">
             <strong className="h6">Target Amount: </strong>
             {project.targetAmount} wei
           </div>
         </Card.Text>
-        <Card.Text as="h7">
+        <Card.Text as="h6">
           <div className="my-1">
             <strong className="h6">Manager: </strong>
             {project.manager}
           </div>
         </Card.Text>
-        <Card.Text as="h7">
+        <Card.Text as="h6">
           <div className="my-1">
             {" "}
             <strong className="h6">Project Address:</strong>

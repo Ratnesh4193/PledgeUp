@@ -180,7 +180,6 @@ const ProjectScreen = () => {
               </Row>
               <Row>
                 {Object.keys(projectHeader).map((key, id) => {
-                  console.log(key, projectHeader[key], currentProject[key]);
                   return (
                     // <p> {key}</p>
                     <Col key={id} sm={12} md={12} lg={6} xl={6}>
