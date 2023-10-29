@@ -8,8 +8,11 @@ const Header = () => {
   const [userInfo, setUserInfo] = useState("");
   useEffect(() => {
     const loadData = async () => {
+      console.log("Header.js window.web3", window.web3);
       if (window.web3 != undefined) {
         const accounts = await web3.eth.getAccounts();
+        console.log("Header.js accounts", accounts);
+
         setUserInfo(accounts[0]);
       }
     };
