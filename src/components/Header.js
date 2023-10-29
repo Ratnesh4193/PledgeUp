@@ -10,9 +10,9 @@ const Header = () => {
     const loadData = async () => {
       console.log("Header.js window.web3", window.web3);
       if (window.web3 != undefined) {
+        console.log("Header.js web3", web3);
         const accounts = await web3.eth.getAccounts();
         console.log("Header.js accounts", accounts);
-
         setUserInfo(accounts[0]);
       }
     };
