@@ -36,7 +36,9 @@ const CreateProject = () => {
         );
       }
 
-      const accounts = await web3.eth.getAccounts();
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
 
       await factory.methods
         .createProject(

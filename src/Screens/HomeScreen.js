@@ -6,9 +6,11 @@ import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import Project from "../components/Project";
 import Loader from "../components/Loader";
 import { LinkContainer } from "react-router-bootstrap";
+import Message from "../components/Message";
 const HomeScreen = () => {
   const [projectList, setProjectList] = useState([]);
   const [isLoading, setIsLoading] = useState(0);
+  const [error, setError] = useState("");
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(1);
@@ -18,7 +20,7 @@ const HomeScreen = () => {
           .call();
         setProjectList(newProjectList);
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
       setIsLoading(0);
     };
@@ -64,6 +66,7 @@ const HomeScreen = () => {
         <div className="display-6 text-success">{projectList.length}</div>
         <div>projects funded</div>
       </Container>
+      {error && <Message>{error}</Message>}
       {isLoading ? (
         <Loader />
       ) : (

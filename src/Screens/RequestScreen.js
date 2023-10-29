@@ -42,7 +42,10 @@ const RequestScreen = () => {
       const currentManager = await project.methods.manager().call();
       setManager(currentManager);
 
-      const currentAccounts = await web3.eth.getAccounts();
+      const currentAccounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
       setAccounts(currentAccounts);
 
       const currentRequestCount = await project.methods
@@ -90,6 +93,7 @@ const RequestScreen = () => {
           "Please Login with a metamask account to make a transaction."
         );
       }
+
       const project = Project(projectAddress);
 
       await project.methods.approveRequest(e.target.id).send({
@@ -174,7 +178,6 @@ const RequestScreen = () => {
 
             <tbody>
               {requests.map((req, i) => {
-                console.log(req);
                 return (
                   <tr key={i}>
                     <th>{req.id}</th>

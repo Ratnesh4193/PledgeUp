@@ -28,7 +28,9 @@ const CreateRequest = () => {
           "Please Login with a metamask account to make a transaction."
         );
       }
-      const accounts = await web3.eth.getAccounts();
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
       const project = Project(projectAddress);
       await project.methods.createRequest(description, value, recipient).send({
         from: accounts[0],

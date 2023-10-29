@@ -74,12 +74,14 @@ const ProjectScreen = () => {
           "Amount must be greater than or equal to the minimum contribution."
         );
       }
-      if (window.web3 == undefined) {
+      if (window.ethereum == undefined) {
         throw new Error(
           "Please Login with a metamask account to make a transaction."
         );
       }
-      const accounts = await web3.eth.getAccounts();
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
       const project = Project(projectAddress);
       await project.methods.contribute().send({
         from: accounts[0],
