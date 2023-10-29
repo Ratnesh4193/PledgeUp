@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.on-hover {
+  transition: background-color 0.3s; /* Smooth transition on hover */
+
+  /* Define the default card style */
+  background-color: #fff;
+  
+  /* Add hover effect */
+  &:hover {
+    border-top: 2px solid #f0f0f0; /* Change the background color on hover */
+  }
+}
+
+.card-hover {
+  transition: background-color 0.3s; /* Smooth transition on hover */
+
+  /* Define the default card style */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Add hover effect */
+  &:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+  }
+}
