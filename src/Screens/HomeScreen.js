@@ -15,6 +15,7 @@ const HomeScreen = () => {
     const loadData = async () => {
       setIsLoading(1);
       try {
+        console.log(factory);
         const newProjectList = await factory.methods
           .getDeployedProjects()
           .call();
