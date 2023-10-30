@@ -43,7 +43,6 @@ describe("Projects", () => {
     assert.ok(factory.options.address);
     assert.ok(project.options.address);
     const data = await factory.methods.deployedProjects(0).call();
-    console.log(data);
   });
   // it("marks caller as the project manager", async () => {
   //   const manager = await project.methods.manager().call();
